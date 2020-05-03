@@ -1,5 +1,3 @@
-import { Ionicons } from '@expo/vector-icons';
-import * as WebBrowser from 'expo-web-browser';
 import * as React from 'react';
 import coverimg from "./cover.png";
 import sickimg from "./sick.png";
@@ -8,8 +6,7 @@ import home from "./home.png";
 import distanceimg from "./distance.png";
 import washinghands from "./washinghands.png"
 import { StyleSheet, Text, View, Image, Link } from 'react-native';
-import { RectButton, ScrollView } from 'react-native-gesture-handler';
-import ImageSlider from 'react-native-image-slider';
+import { ScrollView } from 'react-native-gesture-handler';
 export default function LinksScreen() {
   return (
     <ScrollView style={Styles.scrv} >

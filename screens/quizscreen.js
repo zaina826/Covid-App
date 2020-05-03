@@ -1,16 +1,15 @@
-import HomeScreen from "./HomeScreen"
 import * as React from 'react';
 import cough from "./cough.png";
 import logo from "./qmark.png"
 import cough2 from "./cough2.png";
 import cough3 from "./cough3.png"
 import RadioForm from 'react-native-simple-radio-button';
-import bacteria from "./bacteria.jpg"
 import {
     Image, Platform, StyleSheet, Text, TouchableOpacity, View, radio, Alert, Button,
     ScrollView
 } from 'react-native';
-
+// a variable of radio props has to be added to every RadioForm to define it's label and
+//value.
 var radio_props = [
     { label: 'Yes', value: 1 },
     { label: 'No', value: 0 }
@@ -62,13 +61,18 @@ class Quiz extends React.Component {
         correct1: 0,
         para: 0,
     }
-
+    //value1 is going to be set as the value of the radio button pressed, correct is 
+    // going to be set as the correct value of the answer, and para is going to be set
+    // as the paragraph given in the alert after the question is answers (it comes after 
+    //Correct or Not correct)
     displayAlert = () => {
         const { value1, correct1, para } = this.state;
         const isCorrect = value1 === correct1;
         const alertMessage = isCorrect ? "Correct, " : "Not correct,";
         Alert.alert(alertMessage + para);
     };
+    //this function works for all 10 questions by taking value1, correct1 and para from 
+    //the check question function, which is available for all functions.
     checkquestion = value => this.setState({ correct1: 0, value1: value, para: " spraying alcohol or chlorine all over your body will not kill viruses that have already entered your body. Alcohol and chlorine can be useful as surface disinfectants, but need to be used according to recommendations." }, this.displayAlert);
     checkquestion2 = value => this.setState({ correct1: 0, value1: value, para: " antibiotics do not work against viruses, only bacteria." }, this.displayAlert);
     checkquestion3 = value => this.setState({ correct1: 1, value1: value, para: " Sars-CoV-2 is the correct name of the virus itself. The disease it causes to humans is called COVID-19" }, this.displayAlert);
@@ -78,6 +82,9 @@ class Quiz extends React.Component {
     checkquestion7 = value => this.setState({ correct1: 1, value1: value, para: "it's really important to tell someone, so you and your family can be safe and happy." }, this.displayAlert);
     checkquestion9 = value => this.setState({ correct1: 3, value1: value, para: "COVID-19 affects your respritory system(lungs, throat, nose and others.)" }, this.displayAlert);
     checkquestion10 = value => this.setState({ correct1: 2, value1: value, para: "COVID-19 is a virus." }, this.displayAlert);
+    //These functions take the value of the answer and also the value of the correct and the 
+    //paragraph shown in the alert and pass it to the function, so it'll be unique from every
+    //other alert.
     render() {
         return (
             <ScrollView>
@@ -100,6 +107,10 @@ class Quiz extends React.Component {
                             formHorizontal={true}
                             labelHorizontal={false}
                             initial={-1}
+                        //Radio props is unique for every radio button.
+                        //The onPress takes the value chosen then passes it to 
+                        //the checkquestion function which passes it to the 
+                        //display alert function.
                         />
                     </View>
 
