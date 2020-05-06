@@ -4,14 +4,10 @@ import Logo from "./Covid19.png";
 import Confirmedimg from "./confirmed.png";
 import Recoveredimg from "./recovered.png";
 import Deathimg from "./Death.png"
-// import { OptionsButton } from 'react-native-options-button';
 import { Image, Platform, StyleSheet, Text, TouchableOpacity, View, Alert, Button, ScrollView } from 'react-native';
-import { pink } from "color-name";
 class HomeScreen extends React.Component {
-
   constructor(props) {
     super(props);
-
     this.getCountryData = this.getCountryData.bind(this);
   }
   state = {
@@ -95,7 +91,7 @@ class HomeScreen extends React.Component {
               </View>
             </View>
             <Text style={styles.font3}>Select a country:</Text>
-            <ScrollView>
+            <ScrollView style={styles.marginbottom}>
               {this.rendercountryoptions()}
             </ScrollView>
           </View>
@@ -106,6 +102,9 @@ class HomeScreen extends React.Component {
 }
 export default HomeScreen
 const styles = StyleSheet.create({
+  marginbottom: {
+    marginBottom: 250,
+  },
   container: {
     flex: 1,
     alignContent: "center",

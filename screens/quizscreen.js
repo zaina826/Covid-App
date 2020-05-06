@@ -80,8 +80,8 @@ class Quiz extends React.Component {
     checkquestion5 = value => this.setState({ correct1: 2, value1: value, para: "Blurred vision is not one of the symptoms,some of the symptoms are: a high fever, tiredness, dry cough, nasal congestion and more" }, this.displayAlert);
     checkquestion6 = value => this.setState({ correct1: 3, value1: value, para: "it's number 3, Always cover your mouth with your elbow when you cough" }, this.displayAlert);
     checkquestion7 = value => this.setState({ correct1: 1, value1: value, para: "it's really important to tell someone, so you and your family can be safe and happy." }, this.displayAlert);
-    checkquestion9 = value => this.setState({ correct1: 3, value1: value, para: "COVID-19 affects your respritory system(lungs, throat, nose and others.)" }, this.displayAlert);
-    checkquestion10 = value => this.setState({ correct1: 2, value1: value, para: "COVID-19 is a virus." }, this.displayAlert);
+    checkquestion9 = value => this.setState({ correct1: 3, value1: value, para: "COVID-19 affects your respritory system (lungs, throat, nose and others.)" }, this.displayAlert);
+    checkquestion10 = value => this.setState({ correct1: 2, value1: value, para: "COVID-19 is caused  by a virus." }, this.displayAlert);
     //These functions take the value of the answer and also the value of the correct and the 
     //paragraph shown in the alert and pass it to the function, so it'll be unique from every
     //other alert.
@@ -211,7 +211,7 @@ class Quiz extends React.Component {
                         />
                     </View>
                     <View style={styles.question}>
-                        <Text style={styles.Text2}>Covid-19 is a:</Text>
+                        <Text style={styles.Text2}>COVID-19 is caused by a:</Text>
                         <RadioForm
                             radio_props={radio_props10}
                             onPress={(value) => { this.checkquestion10(value) }}
